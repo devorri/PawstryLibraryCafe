@@ -1,0 +1,122 @@
+/* --- 1. THE FULL PAGE BACKGROUND FIX --- */
+body {
+    /* This applies the image to the entire page */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
+                      url('images/menu\ backgound.png');
+    
+    /* This makes the image stay still while you scroll (very professional look) */
+    background-attachment: fixed; 
+    
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- 2. LOGO & NAV FIX --- */
+.logo-area img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+nav {
+    /* Making the nav slightly see-through so the BG shows behind it */
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px); 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* --- 3. HEADER & CONTENT --- */
+.page-header {
+    /* Since the BG is now on the body, we make the header transparent */
+    background: transparent !important;
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #2d5a27;
+}
+
+/* --- 4. GLASSMORPHISM PRICE LIST --- */
+.price-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    /* This "frosted glass" look lets the background peek through */
+    background: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.menu-column h3 {
+    font-family: 'Playfair Display', serif;
+    color: #2d5a27;
+    border-bottom: 2px solid #88a070;
+    margin-bottom: 15px;
+}
+
+.menu-column p {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+/* --- 5. GRID & CARDS --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding-bottom: 80px;
+}
+
+.menu-card {
+    position: relative;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.menu-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(45, 90, 39, 0.9);
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+}
+
+/* --- 6. FOOTER --- */
+footer {
+    background: rgba(45, 90, 39, 0.95);
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
